@@ -3,10 +3,13 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Settings;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'projects' => Project::all(),
+    ]);
 })->name('home');
 
 Route::view('dashboard', 'dashboard')
