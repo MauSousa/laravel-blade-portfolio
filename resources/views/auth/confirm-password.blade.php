@@ -4,7 +4,8 @@
         class="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 overflow-hidden">
         <div class="p-6">
             <div class="text-center mb-6">
-                <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-100">{{ __('Confirm Password') }}</h1>
+                <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+                    {{ __('Confirm Password') }}</h1>
                 <p class="text-gray-600 dark:text-gray-400 mt-1">
                     {{ __('Please confirm your password before continuing.') }}
                 </p>
@@ -14,7 +15,8 @@
                 @csrf
                 <!-- Password Input -->
                 <div class="mb-4">
-                    <x-forms.input name="password" type="password" label="Password" placeholder="••••••••" />
+                    <x-forms.input name="password" type="password"
+                        label="Password" placeholder="••••••••" />
                 </div>
 
                 <!-- Confirm Button -->
