@@ -30,11 +30,14 @@ class Project extends Model
 
     /**
      * Get the project status attribute.
+     *
+     * @return Attribute<string, string>
      */
     protected function publishedStatus(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->is_published === ProjectStatusEnum::PUBLISHED ? ProjectStatusEnum::PUBLISHED->label() : ProjectStatusEnum::DRAFTED->label()
+            // @phpstan-ignore-next-line
+            get: fn (): string => $this->is_published === ProjectStatusEnum::PUBLISHED ? ProjectStatusEnum::PUBLISHED->label() : ProjectStatusEnum::DRAFTED->label()
         );
     }
 }
