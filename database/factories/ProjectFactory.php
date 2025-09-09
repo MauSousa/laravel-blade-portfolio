@@ -35,11 +35,9 @@ class ProjectFactory extends Factory
      */
     public function drafted(): Factory
     {
-        return $this->state(function (array $attributes) {
-            return [
-                'is_published' => ProjectStatusEnum::DRAFTED,
-            ];
-        });
+        return $this->state(fn (array $attributes): array => [
+            'is_published' => ProjectStatusEnum::DRAFTED,
+        ]);
     }
 
     /**
@@ -47,10 +45,8 @@ class ProjectFactory extends Factory
      */
     public function published(): Factory
     {
-        return $this->state(function (array $attributes) {
-            return [
-                'is_published' => ProjectStatusEnum::PUBLISHED,
-            ];
-        });
+        return $this->state(fn (array $attributes): array => [
+            'is_published' => ProjectStatusEnum::PUBLISHED,
+        ]);
     }
 }
