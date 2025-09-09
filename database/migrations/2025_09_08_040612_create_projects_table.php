@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table): void {
             $table->id();
             $table->boolean('is_published');
-            $table->string('title');
+            $table->string('title')->unique();
             $table->text('description');
             $table->string('technologies')->nullable();
             $table->string('repository_url')->nullable();
