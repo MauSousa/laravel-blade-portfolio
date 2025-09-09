@@ -1,7 +1,7 @@
 <x-layouts.app>
     <!-- Breadcrumbs -->
     <div class="mb-6 flex items-center text-sm">
-        <a href="{{ route('dashboard') }}"
+        <a href="{{ route('project.index') }}"
             class="text-blue-600 dark:text-blue-400 hover:underline">{{ __('Dashboard') }}</a>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mx-2 text-gray-400"
             fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -25,7 +25,8 @@
         <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
             {{ __('Profile') }}</h1>
         <p class="text-gray-600 dark:text-gray-400 mt-1">
-            {{ __('Update your name and email address') }}</p>
+            {{ __('Update your name and email address') }}
+        </p>
     </div>
 
     <div class="p-6">

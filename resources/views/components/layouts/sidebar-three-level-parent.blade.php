@@ -1,4 +1,8 @@
-@props(['active' => false, 'title' => '', 'icon' => 'fas-list'])
+@props([
+    'active' => false,
+    'title' => '',
+    'icon' => 'fas-list',
+])
 
 <div x-data="{ subOpen: {{ $active ? 'true' : 'false' }} }">
     <button
@@ -15,9 +19,16 @@
             'bg-sidebar-accent text-sidebar-accent-foreground font-medium' => $active,
             'hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground' => !$active,
         ])
-        :class="{ 'justify-center': !sidebarOpen, 'justify-between': sidebarOpen }">
+        :class="{
+            'justify-center': !
+                sidebarOpen,
+            'justify-between': sidebarOpen
+        }">
         <div class="flex items-center"
-            :class="{ 'justify-center': !sidebarOpen }">
+            :class="{
+                'justify-center': !
+                    sidebarOpen
+            }">
             @svg($icon, $active ? 'w-5 h-5 text-white dark:text-gray-800' : 'w-5 h-5 text-gray-500')
             <span x-show="sidebarOpen"
                 x-transition:enter="transition-all duration-300"

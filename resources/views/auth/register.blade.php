@@ -4,7 +4,8 @@
         <div class="p-6">
             <div class="mb-3">
                 <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-                    {{ __('Register an account') }}</h1>
+                    {{ __('Register an account') }}
+                </h1>
             </div>
 
             <form method="POST" action="{{ route('register') }}"
@@ -43,7 +44,8 @@
             <!-- Login Link -->
             <div class="text-center mt-6">
                 <p class="text-sm text-gray-600 dark:text-gray-400">
-                    Already have an account?
+                    Already have an
+                    account?
                     <a href="{{ route('login') }}"
                         class="text-blue-600 dark:text-blue-400 hover:underline font-medium">{{ __('Sign in') }}</a>
                 </p>

@@ -1,7 +1,7 @@
 <x-layouts.app>
     <!-- Breadcrumbs -->
     <div class="mb-6 flex items-center text-sm">
-        <a href="{{ route('dashboard') }}"
+        <a href="{{ route('project.index') }}"
             class="text-blue-600 dark:text-blue-400 hover:underline">{{ __('Dashboard') }}</a>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mx-2 text-gray-400"
             fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -23,7 +23,8 @@
     <!-- Page Title -->
     <div class="mb-6">
         <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {{ __('Update password') }}</h1>
+            {{ __('Update password') }}
+        </h1>
         <p class="text-gray-600 dark:text-gray-400 mt-1">
             {{ __('Ensure your account is using a long, random password to stay secure') }}
         </p>

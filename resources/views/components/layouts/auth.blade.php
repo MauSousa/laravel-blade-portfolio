@@ -4,25 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - {{ config('app.name') }}</title>
+    <title>Login -
+        {{ config('app.name') }}</title>
     @vite('resources/css/app.css')
     <script>
         function applyTheme() {
-            const userPref = localStorage.getItem('darkMode');
-            const systemPref = window.matchMedia('(prefers-color-scheme: dark)')
+            const userPref = localStorage
+                .getItem('darkMode');
+            const systemPref = window
+                .matchMedia(
+                    '(prefers-color-scheme: dark)'
+                )
                 .matches;
-            if (userPref === 'true' || (userPref === null && systemPref)) {
-                document.documentElement.classList.add('dark');
+            if (userPref === 'true' || (
+                    userPref === null &&
+                    systemPref)) {
+                document.documentElement
+                    .classList.add('dark');
             } else {
-                document.documentElement.classList.remove('dark');
+                document.documentElement
+                    .classList.remove(
+                        'dark');
             }
         }
         // Initial theme application
         applyTheme();
         // Listen for system theme changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',
+        window.matchMedia(
+            '(prefers-color-scheme: dark)'
+        ).addEventListener('change',
             (e) => {
-                if (!('darkMode' in localStorage)) {
+                if (!('darkMode' in
+                        localStorage)) {
                     applyTheme();
                 }
             });

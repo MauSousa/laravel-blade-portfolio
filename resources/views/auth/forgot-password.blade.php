@@ -5,7 +5,8 @@
         <div class="p-6">
             <div class="text-center mb-6">
                 <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-                    {{ __('Forgot Password') }}</h1>
+                    {{ __('Forgot Password') }}
+                </h1>
                 <p class="text-gray-600 dark:text-gray-400 mt-1">
                     {{ __('Enter your email to receive a password reset link') }}
                 </p>
