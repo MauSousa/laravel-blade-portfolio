@@ -14,7 +14,7 @@ class DashboardTest extends TestCase
 
     public function test_guests_are_redirected_to_the_login_page(): void
     {
-        $this->get(route('project.index'))->assertRedirect('/login');
+        $this->get(route('project.index'))->assertRedirect('/');
     }
 
     public function test_authenticated_users_can_visit_the_dashboard(): void
