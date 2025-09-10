@@ -14,7 +14,7 @@ class Project extends Model
     /** @use HasFactory<\Database\Factories\ProjectFactory> */
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'technologies', 'repository_url', 'project_url', 'features'];
+    protected $fillable = ['is_published', 'title', 'description', 'technologies', 'repository_url', 'project_url', 'features'];
 
     /**
      * Get the attributes that should be cast.
