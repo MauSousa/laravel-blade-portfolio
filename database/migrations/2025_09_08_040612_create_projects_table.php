@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->boolean('is_published');
             $table->string('title')->unique();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->string('technologies')->nullable();
             $table->string('repository_url')->nullable();
             $table->string('project_url')->nullable();
