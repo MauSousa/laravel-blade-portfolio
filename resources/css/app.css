@@ -16,6 +16,10 @@
     --sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
     --sidebar-border: hsl(var(--sidebar-border));
     --sidebar-ring: hsl(var(--sidebar-ring));
+    --color-dark100: #1f2937;
+    --color-dark200: #111827;
+    --color-dark300: #0f172a;
+    --color-dark400: #020617;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
