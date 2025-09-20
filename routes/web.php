@@ -17,7 +17,7 @@ Route::get('/', function () {
     ];
 
     return view('welcome', [
-        'projects' => Project::all(),
+        'projects' => Project::query()->latest()->get(),
         'links' => $links,
     ]);
 })->name('home');
