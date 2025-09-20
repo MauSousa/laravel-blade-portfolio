@@ -41,7 +41,7 @@ describe('project browser', function () {
     test('can see welcome page', function () {
         $page = visit('/');
 
-        $page->assertSee('Personal Portfolio');
+        $page->assertSee('Mauricio Sousa');
     });
 
     test('can create a new project', function () {
