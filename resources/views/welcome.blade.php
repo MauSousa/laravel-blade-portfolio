@@ -11,7 +11,7 @@
     <!-- Styles / Scripts -->
     @if (file_exists(public_path('build/manifest.json')) ||
             file_exists(public_path('hot')))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/style.css', 'resources/js/app.js'])
     @else
         <style>
 
@@ -20,7 +20,7 @@
 </head>
 
 <body
-    class="bg-gray-50 dark:bg-dark300 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    class="bg-gray-50 dark:bg-dark100 text-gray-800 dark:text-gray-200 transition-colors duration-300">
     <!-- Header & Navigation -->
     <header class="bg-white dark:bg-dark200 py-4 shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-5 flex justify-between items-center">
@@ -62,24 +62,16 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="container mx-auto px-5 py-8 md:py-10">
+    <section id="about" class="container mx-auto px-5 py-8 md:py-10">
         <div class="text-center max-w-2xl mx-auto">
             <h1 class="text-4xl md:text-5xl font-bold dark:text-white">
                 Mauricio Sousa
             </h1>
-            <p class="py-3 text-2xl">
+            <p class="py-3 text-3xl">
                 Laravel backend developer
             </p>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="bg-white dark:bg-dark300 py-8">
         <div class="container mx-auto px-5">
-            <h2 class="text-3xl font-bold text-center mb-4 dark:text-white">
-                About me
-            </h2>
-
             <div class="grid grid-cols-1 gap-12 items-center">
                 <div>
                     <p class="text-lg mb-6 dark:text-gray-300">
@@ -105,7 +97,7 @@
     </section>
 
     <!-- Experience section -->
-    <section id="experience" class="bg-white dark:bg-dark300 py-8">
+    <section id="experience" class="bg-white dark:bg-dark200 py-8">
         <div class="container mx-auto px-5">
             <h2 class="text-3xl font-bold text-center mb-4 dark:text-white">
                 Professional experience
@@ -125,7 +117,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-8 bg-white dark:bg-dark300">
+    <section id="projects" class="py-8 bg-white dark:bg-dark100">
         <div class="container mx-auto px-5">
             <h2 class="text-3xl font-bold  text-center mb-4 dark:text-white">
                 Backend Projects</h2>
@@ -149,7 +141,7 @@
         </div>
     </section>
 
-    <section id="skills" class="py-6 bg-gray-50 dark:bg-dark400">
+    <section id="skills" class="py-6 bg-gray-50 dark:bg-dark200">
         <div class="container mx-auto px-5">
             <h2 class="text-3xl font-bold text-center mb-4 dark:text-white">
                 Technical Skills</h2>
@@ -175,9 +167,9 @@
                     </div>
                     <div class="flex flex-col justify-center items-center">
                         <p class="text-[25px]">PHP</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="80"
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fill-white dark:fill-gray-200" width="80"
                             height="60" viewBox="0 -1 100 50">
-                            <path fill="#000"
+                            <path
                                 d="M7.579 10.123h14.204c4.169.035 7.19 1.237 9.063 3.604 1.873 2.367 2.491 5.6 1.855 9.699-.247 1.873-.795 3.71-1.643 5.512a16.385 16.385 0 01-3.392 4.876c-1.767 1.837-3.657 3.003-5.671 3.498a26.11 26.11 0 01-6.254.742h-6.36l-2.014 10.07H0l7.579-38.001m6.201 6.042l-3.18 15.9c.212.035.424.053.636.053h.742c3.392.035 6.219-.3 8.48-1.007 2.261-.742 3.781-3.321 4.558-7.738.636-3.71 0-5.848-1.908-6.413-1.873-.565-4.222-.83-7.049-.795-.424.035-.83.053-1.219.053h-1.113l.053-.053M41.093 0h7.314L46.34 10.123h6.572c3.604.071 6.289.813 8.056 2.226 1.802 1.413 2.332 4.099 1.59 8.056l-3.551 17.649h-7.42L54.979 21.2c.353-1.767.247-3.021-.318-3.763s-1.784-1.113-3.657-1.113l-5.883-.053-4.346 21.783h-7.314L41.093 0M70.412 10.123h14.204c4.169.035 7.19 1.237 9.063 3.604 1.873 2.367 2.491 5.6 1.855 9.699-.247 1.873-.795 3.71-1.643 5.512a16.385 16.385 0 01-3.392 4.876c-1.767 1.837-3.657 3.003-5.671 3.498a26.11 26.11 0 01-6.254.742h-6.36L70.2 48.124h-7.367l7.579-38.001m6.201 6.042l-3.18 15.9c.212.035.424.053.636.053h.742c3.392.035 6.219-.3 8.48-1.007 2.261-.742 3.781-3.321 4.558-7.738.636-3.71 0-5.848-1.908-6.413-1.873-.565-4.222-.83-7.049-.795-.424.035-.83.053-1.219.053H76.56l.053-.053" />
                         </svg>
                     </div>
@@ -476,7 +468,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-6 bg-gray-50 dark:bg-dark400">
+    <section id="contact" class="py-6 bg-gray-50 dark:bg-dark100">
         <div class="container mx-auto px-5">
             <h2 class="text-3xl font-bold text-center mb-4 dark:text-white">
                 Get in touch
@@ -530,7 +522,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 dark:bg-dark400 text-white py-8 text-center">
+    <footer class="bg-gray-800 dark:bg-dark200 text-white py-8 text-center">
         <div class="container mx-auto px-5">
             <div class="flex justify-center items-center gap-4">
                 <p>MIT LICENSE</p>
@@ -556,12 +548,12 @@
                         john.doe@example.com</p>
                 </div>
                 <div class="flex justify-center items-center gap-2">
-                    <svg width="15" height="15"
-                        viewBox="0 0 1024 1024" fill="none"
+                    <svg width="15" height="15" class="fill-none dark:fill-white"
+                        viewBox="0 0 1024 1024"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z"
-                            transform="scale(64)" fill="#000" />
+                            transform="scale(64)" />
                     </svg>
                     <!-- TODO: Add link to my GitHub profile -->
                     <a href="https://github.com/MauSousa"
