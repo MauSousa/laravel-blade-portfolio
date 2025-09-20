@@ -132,3 +132,12 @@
 .dark .custom-file-input:active::before {
     background: #4b5563;
 }
+
+#experience,
+#about,
+#projects,
+#skills,
+#contact {
+    padding-top: 80px;
+    margin-bottom: -80px;
+}
