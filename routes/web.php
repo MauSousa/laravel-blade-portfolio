@@ -8,8 +8,17 @@ use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    $links = [
+        'About' => '#about',
+        'Experience' => '#experience',
+        'Projects' => '#projects',
+        'Skills' => '#skills',
+        'Contact' => '#contact',
+    ];
+
     return view('welcome', [
         'projects' => Project::all(),
+        'links' => $links,
     ]);
 })->name('home');
 
