@@ -40,4 +40,11 @@ class Project extends Model
             get: fn (): string => $this->is_published === ProjectStatusEnum::PUBLISHED ? ProjectStatusEnum::PUBLISHED->label() : ProjectStatusEnum::DRAFTED->label()
         );
     }
+
+    protected function getTechStack(): Attribute
+    {
+        return Attribute::make(
+            get: fn (): array => explode(',', $this->technologies)
+        );
+    }
 }
