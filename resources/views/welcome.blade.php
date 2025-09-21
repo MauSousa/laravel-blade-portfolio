@@ -491,10 +491,7 @@
                 <div>
                     <form class="space-y-6">
                         <div>
-                            <label for="name"
-                                class="block mb-2 font-medium dark:text-gray-300">
-                                Your Name
-                            </label>
+                            <x-welcome.label for="name" :value="__('Your name')" />
                             <input type="text" id="name"
                                 class="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:text-gray-300"
                                 placeholder="Enter your name">
