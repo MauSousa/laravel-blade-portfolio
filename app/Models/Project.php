@@ -41,10 +41,23 @@ class Project extends Model
         );
     }
 
+    /**
+     *  Get the technologies as an array
+     */
     protected function getTechStack(): Attribute
     {
         return Attribute::make(
             get: fn (): array => explode(',', $this->technologies)
+        );
+    }
+
+    /**
+     *  Get the features as an array
+     */
+    protected function getFeatures(): Attribute
+    {
+        return Attribute::make(
+            get: fn (): array => explode(',', $this->features)
         );
     }
 }
