@@ -43,6 +43,8 @@ class Project extends Model
 
     /**
      *  Get the technologies as an array
+     *
+     * @return Attribute<string,string>
      */
     protected function getTechStack(): Attribute
     {
@@ -53,6 +55,8 @@ class Project extends Model
 
     /**
      *  Get the features as an array
+     *
+     * @return Attribute<string,string>
      */
     protected function getFeatures(): Attribute
     {
