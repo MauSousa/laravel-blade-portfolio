@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\Settings;
 use App\Models\Project;
@@ -41,5 +42,7 @@ Route::prefix('projects')->name('project.')->middleware(['auth', 'verified'])->g
     Route::patch('/{project}', [ProjectController::class, 'update'])->name('update');
     Route::delete('/{project}', [ProjectController::class, 'destroy'])->name('destroy');
 });
+
+Route::post('contact', ContactFormController::class)->name('contact');
 
 require __DIR__ . '/auth.php';
