@@ -132,6 +132,7 @@
                     <x-welcome.projectcard title="{{ $project->title }}"
                         description="{{ $project->description }}"
                         :tech="$project->get_tech_stack"
+                        :features="$project->get_features"
                         repository_url="{{ $project->repository_url }}"
                         project_url="{{ $project->project_url }}" />
                 @empty

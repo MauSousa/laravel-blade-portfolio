@@ -1,4 +1,4 @@
-@props(['title', 'description', 'tech', 'repository_url', 'project_url'])
+@props(['title', 'description', 'tech', 'repository_url', 'project_url', 'features'])
 
 <div
     class="bg-gray-50 dark:bg-dark200 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
@@ -8,6 +8,24 @@
     <p class="text-gray-600 dark:text-gray-400 mb-4">
         {{ $description }}
     </p>
+
+    <!-- Features -->
+        <div class="grid grid-cols-1 gap-2 mb-4">
+            <p>Some features</p>
+        <div class="gap-2 flex flex-wrap">
+        @forelse ($features as $feature)
+            <span
+                class="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 py-1 rounded text-sm">
+                {{ $feature }}
+            </span>
+        @empty
+        @endforelse
+        </div>
+    </div>
+
+    <!-- Tecnologies -->
+        <div class="grid grid-cols-1 gap-2 mb-4">
+            <p>Tecnologies used</p>
     <div class="flex flex-wrap gap-2 mb-4">
         @forelse ($tech as $project_tech)
             <span
@@ -15,11 +33,8 @@
                 {{ $project_tech }}
             </span>
         @empty
-            <span
-                class="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 py-1 rounded text-sm">
-                Something
-            </span>
         @endforelse
+    </div>
     </div>
 
     <!-- Repository url -->
