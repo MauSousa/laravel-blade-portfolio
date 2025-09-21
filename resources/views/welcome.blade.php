@@ -61,6 +61,9 @@
         </div>
     </header>
 
+    <!-- Session email badge -->
+    <x-status-session-badge :status="session('email_status')" />
+
     <!-- Hero Section -->
     <section id="about" class="container mx-auto px-5 py-8 md:py-10">
         <div class="text-center max-w-2xl mx-auto">
