@@ -30,8 +30,8 @@
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center space-x-8">
                 @foreach ($links as $link => $href)
-                    <x-welcome.link
-                        href="{{ $href }}" :name="__($link)" />
+                    <x-welcome.link href="{{ $href }}"
+                        :name="__($link)" />
                 @endforeach
             </div>
 
@@ -54,32 +54,31 @@
         <div class="hidden md:hidden mt-4" id="mobile-menu">
             <div class="container mx-auto px-5 flex flex-col space-y-4 pb-4">
                 @foreach ($links as $link => $href)
-                    <x-welcome.link
-                        href="{{ $href }}" :name="__($link)" />
+                    <x-welcome.link href="{{ $href }}"
+                        :name="__($link)" />
                 @endforeach
             </div>
         </div>
     </header>
 
-
     <!-- Hero Section -->
     <section id="about" class="container mx-auto px-5 py-8 md:py-10">
-    <!-- Session email badge -->
-    @if (session('email_status'))
-    <x-status-session-badge :status="__(session('email_status'))" />
-    @endif
+        <!-- Session email badge -->
+        @if (session('email_status'))
+            <x-status-session-badge :status="__(session('email_status'))" />
+        @endif
         <div class="text-center max-w-2xl mx-auto">
             <h1 class="text-4xl md:text-5xl font-bold dark:text-white">
                 Mauricio Sousa
             </h1>
             <p class="py-3 text-3xl">
-                {{__('Laravel backend developer')}}
+                {{ __('Laravel backend developer') }}
             </p>
         </div>
         <div class="container mx-auto px-5">
             <div class="grid grid-cols-1 gap-12 items-center">
                 <div>
-                <!-- TODO: Change this -->
+                    <!-- TODO: Change this -->
                     <p class="text-lg mt-5 mb-6 dark:text-gray-300">
                         I'm a dedicated backend developer with 5+ years of
                         experience specializing in Laravel development.
@@ -479,42 +478,44 @@
     <section id="contact" class="py-6 bg-gray-50 dark:bg-dark100">
         <div class="container mx-auto px-5">
             <h2 class="text-3xl font-bold text-center mb-4 dark:text-white">
-            {{ __('Contact me') }}
+                {{ __('Contact me') }}
             </h2>
             <p
                 class="text-gray-600 dark:text-gray-300 text-center text-lg max-w-2xl mx-auto mb-6">
                 <!-- TODO: change this -->
-                {{__('Let\'s get in touch, send me an email and I will get in touch with you')}}
+                {{ __('Let\'s get in touch, send me an email and I will get in touch with you') }}
             </p>
 
             <div
                 class="grid grid-cols-1 md:grid-cols-1 gap-10 max-w-4xl mx-auto">
                 <div>
-                        <form method="POST" action="{{ route('contact') }}" class="space-y-3">
-        @csrf
-            <!-- Name input -->
-            <div class="">
-                <x-forms.input :label="__('Your name')" name="name" type="text"
-                    :placeholder="__('Your name')" required autofocus />
-            </div>
+                    <form method="POST" action="{{ route('contact') }}"
+                        class="space-y-3">
+                        @csrf
+                        <!-- Name input -->
+                        <div class="">
+                            <x-forms.input :label="__('Your name')" name="name"
+                                type="text" :placeholder="__('Your name')" required
+                                autofocus />
+                        </div>
 
-            <!-- Email input -->
-            <div class="mt-5">
-                <x-forms.input :label="__('Your email')" name="email"
-                    type="email" :placeholder="__('Your email')" />
-            </div>
+                        <!-- Email input -->
+                        <div class="mt-5">
+                            <x-forms.input :label="__('Your email')" name="email"
+                                type="email" :placeholder="__('Your email')" />
+                        </div>
 
-            <!-- Message input -->
-            <div class="mt-5">
-                <x-forms.textarea cols="40" rows="5"
-                    :label="__('Your message')" name="message"
-                    :placeholder="__('Your message')" />
-            </div>
+                        <!-- Message input -->
+                        <div class="mt-5">
+                            <x-forms.textarea cols="40" rows="5"
+                                :label="__('Your message')" name="message"
+                                :placeholder="__('Your message')" />
+                        </div>
 
-        <x-button type="primary" class="w-full mt-8">
-            {{ __('Send') }}
-        </x-button>
-    </form>
+                        <x-button type="primary" class="w-full mt-8">
+                            {{ __('Send') }}
+                        </x-button>
+                    </form>
 
                     <!-- <form method="POST" action="{{ route('contact') }}" class="space-y-6"> -->
                     <!-- @csrf -->
