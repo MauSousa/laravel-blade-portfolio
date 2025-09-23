@@ -31,7 +31,7 @@
             <div class="hidden md:flex items-center space-x-8">
                 @foreach ($links as $link => $href)
                     <x-welcome.link
-                        href="{{ $href }}">{{ $link }}</x-welcome.link>
+                        href="{{ $href }}" :name="__($link)" />
                 @endforeach
             </div>
 
@@ -55,29 +55,32 @@
             <div class="container mx-auto px-5 flex flex-col space-y-4 pb-4">
                 @foreach ($links as $link => $href)
                     <x-welcome.link
-                        href="{{ $href }}">{{ $link }}</x-welcome.link>
+                        href="{{ $href }}" :name="__($link)" />
                 @endforeach
             </div>
         </div>
     </header>
 
-    <!-- Session email badge -->
-    <x-status-session-badge :status="session('email_status')" />
 
     <!-- Hero Section -->
     <section id="about" class="container mx-auto px-5 py-8 md:py-10">
+    <!-- Session email badge -->
+    @if (session('email_status'))
+    <x-status-session-badge :status="__(session('email_status'))" />
+    @endif
         <div class="text-center max-w-2xl mx-auto">
             <h1 class="text-4xl md:text-5xl font-bold dark:text-white">
                 Mauricio Sousa
             </h1>
             <p class="py-3 text-3xl">
-                Laravel backend developer
+                {{__('Laravel backend developer')}}
             </p>
         </div>
         <div class="container mx-auto px-5">
             <div class="grid grid-cols-1 gap-12 items-center">
                 <div>
-                    <p class="text-lg mb-6 dark:text-gray-300">
+                <!-- TODO: Change this -->
+                    <p class="text-lg mt-5 mb-6 dark:text-gray-300">
                         I'm a dedicated backend developer with 5+ years of
                         experience specializing in Laravel development.
                         I focus on creating efficient, secure, and scalable
@@ -103,7 +106,7 @@
     <section id="experience" class="bg-white dark:bg-dark200 py-8">
         <div class="container mx-auto px-5">
             <h2 class="text-3xl font-bold text-center mb-4 dark:text-white">
-                Professional experience
+                {{ __('Professional experience') }}
             </h2>
 
             <div class="grid grid-cols-1 gap-12 items-center">
@@ -123,11 +126,11 @@
     <section id="projects" class="py-8 bg-white dark:bg-dark100">
         <div class="container mx-auto px-5">
             <h2 class="text-3xl font-bold  text-center mb-4 dark:text-white">
-                Backend Projects</h2>
+                {{ __('Personal projects') }}
+            </h2>
             <p
-                class="text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto mb-12">
-                Here are some of my recent backend development projects
-                showcasing my expertise.
+                class="text-gray-600 dark:text-gray-300 text-center text-lg max-w-2xl mx-auto mb-12">
+                {{ __('Here are some of my recent projects that I\'ve made in my free time') }}
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -147,9 +150,10 @@
     <section id="skills" class="py-6 bg-gray-50 dark:bg-dark200">
         <div class="container mx-auto px-5">
             <h2 class="text-3xl font-bold text-center mb-4 dark:text-white">
-                Technical Skills</h2>
+                {{ __('Technical skills') }}
+            </h2>
             <p
-                class="text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto mb-6">
+                class="text-gray-600 dark:text-gray-300 text-center text-lg max-w-2xl mx-auto mb-6">
                 Here are the technologies and tools I specialize in as a backend
                 developer.
             </p>
@@ -475,48 +479,72 @@
     <section id="contact" class="py-6 bg-gray-50 dark:bg-dark100">
         <div class="container mx-auto px-5">
             <h2 class="text-3xl font-bold text-center mb-4 dark:text-white">
-                Get in touch
+            {{ __('Contact me') }}
             </h2>
             <p
-                class="text-gray-600 dark:text-gray-300 text-center max-w-2xl mx-auto mb-12">
+                class="text-gray-600 dark:text-gray-300 text-center text-lg max-w-2xl mx-auto mb-6">
                 <!-- TODO: change this -->
-                I'm currently available for freelance projects and open to
-                full-time opportunities.
-                Feel free to reach out if you need backend development
-                expertise.
+                {{__('Let\'s get in touch, send me an email and I will get in touch with you')}}
             </p>
 
             <div
                 class="grid grid-cols-1 md:grid-cols-1 gap-10 max-w-4xl mx-auto">
                 <div>
-                    <form class="space-y-6">
-                        <div>
-                            <x-welcome.label for="name" :value="__('Your name')" />
-                            <input type="text" id="name"
-                                class="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:text-gray-300"
-                                placeholder="Enter your name">
-                        </div>
-                        <div>
-                            <label for="email"
-                                class="block mb-2 font-medium dark:text-gray-300">Your
-                                Email</label>
-                            <input type="email" id="email"
-                                class="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:text-gray-300"
-                                placeholder="Enter your email">
-                        </div>
-                        <div>
-                            <label for="message"
-                                class="block mb-2 font-medium dark:text-gray-300">Your
-                                Message</label>
-                            <textarea id="message" rows="4"
-                                class="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:text-gray-300"
-                                placeholder="Enter your message"></textarea>
-                        </div>
-                        <button type="submit"
-                            class="bg-blue-600 dark:bg-blue-700 text-white px-6 py-3 rounded font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors w-full">
-                            Send Message
-                        </button>
-                    </form>
+                        <form method="POST" action="{{ route('contact') }}" class="space-y-3">
+        @csrf
+            <!-- Name input -->
+            <div class="">
+                <x-forms.input :label="__('Your name')" name="name" type="text"
+                    :placeholder="__('Your name')" required autofocus />
+            </div>
+
+            <!-- Email input -->
+            <div class="mt-5">
+                <x-forms.input :label="__('Your email')" name="email"
+                    type="email" :placeholder="__('Your email')" />
+            </div>
+
+            <!-- Message input -->
+            <div class="mt-5">
+                <x-forms.textarea cols="40" rows="5"
+                    :label="__('Your message')" name="message"
+                    :placeholder="__('Your message')" />
+            </div>
+
+        <x-button type="primary" class="w-full mt-8">
+            {{ __('Send') }}
+        </x-button>
+    </form>
+
+                    <!-- <form method="POST" action="{{ route('contact') }}" class="space-y-6"> -->
+                    <!-- @csrf -->
+                    <!--     <div> -->
+                    <!--         <x-welcome.label for="name" :value="__('Your name')" /> -->
+                    <!--         <input type="text" id="name" -->
+                    <!--             class="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:text-gray-300" -->
+                    <!--             placeholder="__('Enter your name')"> -->
+                    <!--     </div> -->
+                    <!--     <div> -->
+                    <!--         <label for="email" -->
+                    <!--             class="block mb-2 font-medium dark:text-gray-300">Your -->
+                    <!--             Email</label> -->
+                    <!--         <input type="email" id="email" -->
+                    <!--             class="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:text-gray-300" -->
+                    <!--             placeholder="Enter your email"> -->
+                    <!--     </div> -->
+                    <!--     <div> -->
+                    <!--         <label for="message" -->
+                    <!--             class="block mb-2 font-medium dark:text-gray-300">Your -->
+                    <!--             Message</label> -->
+                    <!--         <textarea id="message" rows="4" -->
+                    <!--             class="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:text-gray-300" -->
+                    <!--             placeholder="Enter your message"></textarea> -->
+                    <!--     </div> -->
+                    <!--     <button type="submit" -->
+                    <!--         class="bg-blue-600 dark:bg-blue-700 text-white px-6 py-3 rounded font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors w-full"> -->
+                    <!--         Send Message -->
+                    <!--     </button> -->
+                    <!-- </form> -->
                 </div>
             </div>
         </div>
