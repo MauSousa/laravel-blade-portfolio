@@ -64,9 +64,7 @@
     <!-- Hero Section -->
     <section id="about" class="container mx-auto px-5 py-8 md:py-10">
         <!-- Session email badge -->
-        @if (session('email_status'))
             <x-status-session-badge :status="__(session('email_status'))" />
-        @endif
         <div class="text-center max-w-2xl mx-auto">
             <h1 class="text-4xl md:text-5xl font-bold dark:text-white">
                 Mauricio Sousa
@@ -496,7 +494,7 @@
                         <div class="">
                             <x-forms.input :label="__('Your name')" name="name"
                                 type="text" :placeholder="__('Your name')" required
-                                autofocus />
+                            />
                         </div>
 
                         <!-- Email input -->
