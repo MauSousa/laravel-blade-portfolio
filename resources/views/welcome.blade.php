@@ -151,8 +151,7 @@
             </h2>
             <p
                 class="text-gray-600 dark:text-gray-300 text-center text-lg max-w-2xl mx-auto mb-6">
-                Here are the technologies and tools I specialize in as a backend
-                developer.
+                {{ __('Here are the technologies and tools I specialize in as a backend developer') }}
             </p>
 
             <!-- Backend-focused tools -->
