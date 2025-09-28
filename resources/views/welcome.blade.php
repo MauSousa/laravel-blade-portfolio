@@ -63,8 +63,20 @@
 
     <!-- Hero Section -->
     <section id="about" class="container mx-auto px-5 py-8 md:py-10">
+
+        {{-- All errors --}}
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <!-- Session email badge -->
-            <x-status-session-badge :status="__(session('email_status'))" />
+        <x-status-session-badge :status="__(session('email_status'))" />
         <div class="text-center max-w-2xl mx-auto">
             <h1 class="text-4xl md:text-5xl font-bold dark:text-white">
                 Mauricio Sousa
@@ -481,21 +493,23 @@
                         <!-- Name input -->
                         <div class="">
                             <x-forms.input :label="__('Your name')" name="name"
-                                type="text" :placeholder="__('Your name')" required
-                            />
+                                type="text" :placeholder="__('Your name')"
+                                value="{{ old('name') }}" required />
                         </div>
 
                         <!-- Email input -->
                         <div class="mt-5">
                             <x-forms.input :label="__('Your email')" name="email"
-                                type="email" :placeholder="__('Your email')" />
+                                type="email" :placeholder="__('Your email')"
+                                value="{{ old('email') }}" />
                         </div>
 
                         <!-- Message input -->
                         <div class="mt-5">
                             <x-forms.textarea cols="40" rows="5"
                                 :label="__('Your message')" name="message"
-                                :placeholder="__('Your message')" />
+                                :placeholder="__('Your message')"
+                                value="{{ old('message') }}" />
                         </div>
 
                         <x-button type="primary" class="w-full mt-8">
