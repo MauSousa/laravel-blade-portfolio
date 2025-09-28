@@ -76,23 +76,11 @@
         <div class="container mx-auto px-5">
             <div class="grid grid-cols-1 gap-12 items-center">
                 <div>
-                    <!-- TODO: Change this -->
                     <p class="text-lg mt-5 mb-6 dark:text-gray-300">
-                        I'm a dedicated backend developer with 5+ years of
-                        experience specializing in Laravel development.
-                        I focus on creating efficient, secure, and scalable
-                        server-side solutions.
-                    </p>
-                    <p class="text-lg mb-6 dark:text-gray-300">
-                        My expertise includes API development, database design,
-                        server management, and implementing
-                        complex business logic while maintaining code quality
-                        and performance.
+                        {{ __('I\'m a backend developer with 3+ years of experience specializing in Laravel development. I focus on creating efficient and secure web applications and api.') }}
                     </p>
                     <p class="text-lg dark:text-gray-300">
-                        When I'm not coding, I enjoy contributing to open-source
-                        projects, learning new technologies,
-                        and sharing knowledge with the developer community.
+                        {{ __('When I\'m not coding, I enjoy wathcing anime, reading manga and listen to metal music.') }}
                     </p>
                 </div>
             </div>
@@ -514,36 +502,6 @@
                             {{ __('Send') }}
                         </x-button>
                     </form>
-
-                    <!-- <form method="POST" action="{{ route('contact') }}" class="space-y-6"> -->
-                    <!-- @csrf -->
-                    <!--     <div> -->
-                    <!--         <x-welcome.label for="name" :value="__('Your name')" /> -->
-                    <!--         <input type="text" id="name" -->
-                    <!--             class="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:text-gray-300" -->
-                    <!--             placeholder="__('Enter your name')"> -->
-                    <!--     </div> -->
-                    <!--     <div> -->
-                    <!--         <label for="email" -->
-                    <!--             class="block mb-2 font-medium dark:text-gray-300">Your -->
-                    <!--             Email</label> -->
-                    <!--         <input type="email" id="email" -->
-                    <!--             class="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:text-gray-300" -->
-                    <!--             placeholder="Enter your email"> -->
-                    <!--     </div> -->
-                    <!--     <div> -->
-                    <!--         <label for="message" -->
-                    <!--             class="block mb-2 font-medium dark:text-gray-300">Your -->
-                    <!--             Message</label> -->
-                    <!--         <textarea id="message" rows="4" -->
-                    <!--             class="w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:text-gray-300" -->
-                    <!--             placeholder="Enter your message"></textarea> -->
-                    <!--     </div> -->
-                    <!--     <button type="submit" -->
-                    <!--         class="bg-blue-600 dark:bg-blue-700 text-white px-6 py-3 rounded font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors w-full"> -->
-                    <!--         Send Message -->
-                    <!--     </button> -->
-                    <!-- </form> -->
                 </div>
             </div>
         </div>
